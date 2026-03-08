@@ -12,7 +12,7 @@ This script automates the installation and configuration of the following:
 
     Docker Engine: Includes docker.io and docker-compose (automatically adds your user to the docker group).
 
-    Essential Tools: git, curl, wget, htop, and build-essential.
+    Essential Tools: git, curl, wget, htop, zsh + Oh My zsh Framework and build-essential.
 
 🌐 Browsers & Communication
 
