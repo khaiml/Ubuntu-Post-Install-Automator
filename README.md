@@ -45,11 +45,9 @@ This script automates the installation and configuration of the following:
 🚀 Quick Start (One-Liner)
 
 To set up a brand new machine, open your terminal and run:
-Bash
 
-curl -sL https://raw.githubusercontent.com/khaiml/Ubuntu-Post-Install-Automator/main/setup-apps.sh | bash
-
-    Note: You will be prompted for your sudo password. Once the script finishes, please log out and log back in for the Docker permissions and GNOME extensions to initialize.
+    curl -sL https://raw.githubusercontent.com/khaiml/Ubuntu-Post-Install-Automator/main/setup-apps.sh | bash
+Note: You will be prompted for your sudo password. Once the script finishes, please log out and log back in for the Docker permissions and GNOME extensions to initialize.
 
 🛠️ How to Customize
 Adding/Removing Standard Apps
