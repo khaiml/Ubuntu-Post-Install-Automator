@@ -69,4 +69,22 @@ gnome-extensions-cli install 779 4679 1689
 # --- 6. POST-INSTALL ---
 sudo usermod -aG docker $USER
 
+# --- 7. ZSH & OH MY ZSH ---
+echo "Installing Zsh and Oh My Zsh..."
+sudo nala install -y zsh
+
+# Install Oh My Zsh (Unattended mode)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+# Install Plugins (Auto-suggestions & Syntax Highlighting)
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# Change default shell to Zsh for the current user
+sudo chsh -s $(which zsh) $USER
+
+# Update the .zshrc file to enable plugins
+sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting docker)/' ~/.zshrc
+
+echo "Zsh installed. Note: You will see the new shell after your next login."
 echo "Installation complete! Please log out and back in to finish."
