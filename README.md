@@ -5,6 +5,7 @@ A streamlined bash script to transform a fresh Ubuntu installation into a fully-
 📦 What’s in the Box?
 
 This script automates the installation of the following tools:
+
 🌐 Browsers & Communication
 
     Browsers: Firefox, Google Chrome, Brave Browser
