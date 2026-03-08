@@ -1,5 +1,6 @@
+---------------------------------
 🚀 Ubuntu Post-Install Automator
-
+---------------------------------
 A streamlined Bash script to transform a fresh Ubuntu installation into a fully-functional workstation in minutes. This script is built for power users who prefer native performance—it prioritizes .deb packages, official repositories, and Nala over Snap packages.
 
 📦 What’s in the Box?
