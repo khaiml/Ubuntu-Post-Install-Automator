@@ -1,4 +1,3 @@
-Here is a clean, professional README.md for your GitHub repository. It uses a clear hierarchy and icons to make it look modern and easy to read.
 🚀 Ubuntu Post-Install Automator
 
 A streamlined bash script to transform a fresh Ubuntu installation into a fully-functional workstation in minutes. This script is designed to be Snap-free, prioritizing native .deb packages and official repositories.
