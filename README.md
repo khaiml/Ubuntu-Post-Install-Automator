@@ -1,75 +1,86 @@
 🚀 Ubuntu Post-Install Automator
 
-A streamlined bash script to transform a fresh Ubuntu installation into a fully-functional workstation in minutes. This script is designed to be Snap-free, prioritizing native .deb packages and official repositories.
+A streamlined Bash script to transform a fresh Ubuntu installation into a fully-functional workstation in minutes. This script is built for power users who prefer native performance—it prioritizes .deb packages, official repositories, and Nala over Snap packages.
 
 📦 What’s in the Box?
 
-This script automates the installation of the following tools:
+This script automates the installation and configuration of the following:
+
+🛠️ Core System & Package Management
+
+    Nala: A faster, prettier, and more informative frontend for apt.
+
+    Docker Engine: Includes docker.io and docker-compose (automatically adds your user to the docker group).
+
+    Essential Tools: git, curl, wget, htop, and build-essential.
 
 🌐 Browsers & Communication
 
-    Browsers: Firefox, Google Chrome, Brave Browser
+    Browsers: Firefox (Native), Google Chrome, and Brave Browser.
 
-    Chat: Discord, Microsoft Teams (teams-for-linux)
+    Chat: Discord (Native .deb) and Microsoft Teams (teams-for-linux community client).
 
-🛠️ Development & System
+📄 Productivity & Remote Work
 
-    Docker: docker.io & docker-compose (with automatic user group permissions)
+    OnlyOffice: Complete desktop office suite (Desktop Editors).
 
-    Package Management: Nala (A faster, prettier frontend for apt)
-
-    Remote Desktop: RustDesk & TeamViewer
-
-    Utilities: git, curl, wget, htop, build-essential
-
-📄 Office & Tools
-
-    OnlyOffice: Complete desktop office suite.
+    Remote Desktop: RustDesk and TeamViewer (Official repositories).
 
     Winboat: Official installation for winboat.app.
 
+🎨 Desktop & Media (GNOME)
+
+    VLC Media Player: The "play anything" media player.
+
+    Extension Manager: A native tool to manage GNOME tweaks without a browser plugin.
+
+    Automated Extensions:
+
+        Clipboard Indicator: Searchable history of your copied items.
+
+        Burn My Windows: Adds retro animations (fire, matrix, etc.) when closing windows.
+
+        System Monitor (0ry0n): Real-time CPU/RAM/Network usage in your top bar.
+
 🚀 Quick Start (One-Liner)
 
-Once you have uploaded your script to GitHub, you can run it on any fresh machine using this command:
+To set up a brand new machine, open your terminal and run:
 Bash
 
-curl -sL https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO_NAME/main/setup.sh | bash
+curl -sL https://raw.githubusercontent.com/khaiml/Ubuntu-Post-Install-Automator/main/setup-apps.sh | bash
 
-    Note: The script will prompt for your sudo password to install packages and add repositories.
+    Note: You will be prompted for your sudo password. Once the script finishes, please log out and log back in for the Docker permissions and GNOME extensions to initialize.
 
 🛠️ How to Customize
-Adding "Standard" Apps (APT/Nala)
+Adding/Removing Standard Apps
 
-If the app is available in the standard Ubuntu repositories, simply find the APPS_TO_INSTALL list in the script and add the package name:
+The script uses a list for standard packages. Simply add or remove names from the APPS_TO_INSTALL array or the nala install block:
 Bash
 
-# Example: Adding VLC and GIMP
+# Example: Adding GIMP
 sudo nala install -y \
     vlc \
     gimp \
     ...
 
-Adding Standalone .deb Files
+Adding New GNOME Extensions
 
-For apps like Chrome or Discord that require a direct download, add a block in the Section 3 of the script:
+If you want to add more extensions, find their ID on the GNOME Extensions website (the number in the URL) and add it to this line in the script:
 Bash
 
-# Template for new .deb apps:
-wget -O app_name.deb "DIRECT_DOWNLOAD_URL"
-sudo nala install ./app_name.deb -y
+gnome-extensions-cli install [EXTENSION_ID]
 
-Removing Snaps
+Modifying Standalone Apps
 
-This script avoids Snaps by default. If you want to completely purge Snap from your system to save resources, you can add this line to the top of your script:
-sudo apt purge snapd -y
+For apps like Chrome, Discord, or RustDesk, the script downloads the .deb file directly. If a link breaks due to a new version, update the wget URL in Section 3.
 ⚠️ Requirements
 
-    OS: Ubuntu 22.04 LTS or newer (tested on 24.04).
+    OS: Ubuntu 22.04 LTS or newer.
 
-    Architecture: x86_64 (64-bit).
+    Architecture: x86_64.
 
-    Internet: Required to fetch repositories and .deb packages.
+    Privileges: Sudo access is required.
 
 🤝 Contributing
 
-Feel free to fork this repo, add your own personal tweaks, and submit a PR if you find a better way to automate the "Linux Desktop" experience!
+Feel free to fork this repository and adapt it to your specific workflow!
